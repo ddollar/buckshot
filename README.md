@@ -8,3 +8,11 @@ your Procfile to allow you to use shotgun easily for development.
 
     $ RAILS_ENV=production PORT=4000 buckshot
     # thin start -p 4000 -e production
+
+## Usage
+
+    # Gemfile
+    gem "buckshot"
+
+    # Procfile
+    web bundle exec buckshot
