@@ -56,7 +56,7 @@ describe Buckshot do
     it "executes shotgun correctly" do
       Buckshot.should_receive(:environment).and_return("development")
       Buckshot.should_receive(:port).and_return("5000")
-      Buckshot.should_receive(:system).with("shotgun -p 5000 -E development")
+      Buckshot.should_receive(:system).with("shotgun -s thin -p 5000 -E development")
       Buckshot.start_shotgun
     end
   end
