@@ -10,11 +10,11 @@ class Buckshot
   end
 
   def self.start_shotgun
-    system "shotgun -s thin -p #{port} -E #{environment}"
+    exec "shotgun -s thin -p #{port} -E #{environment}"
   end
 
   def self.start_thin
-    system "thin start -p #{port} -e #{environment}"
+    exec "thin start -p #{port} -e #{environment}"
   end
 
 private ######################################################################
