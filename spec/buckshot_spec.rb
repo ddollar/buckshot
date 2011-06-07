@@ -56,7 +56,7 @@ describe Buckshot do
     it "executes shotgun correctly" do
       Buckshot.should_receive(:environment).and_return("development")
       Buckshot.should_receive(:port).and_return("5000")
-      Buckshot.should_receive(:system).with("shotgun -s thin -p 5000 -E development")
+      Buckshot.should_receive(:exec).with("shotgun -s thin -p 5000 -E development")
       Buckshot.start_shotgun
     end
   end
@@ -65,7 +65,7 @@ describe Buckshot do
     it "executes thin correctly" do
       Buckshot.should_receive(:environment).and_return("production")
       Buckshot.should_receive(:port).and_return("5000")
-      Buckshot.should_receive(:system).with("thin start -p 5000 -e production")
+      Buckshot.should_receive(:exec).with("thin start -p 5000 -e production")
       Buckshot.start_thin
     end
   end
